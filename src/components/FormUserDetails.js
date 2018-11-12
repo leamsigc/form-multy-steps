@@ -10,6 +10,7 @@ export class FormUserDetails extends Component {
 	};
 	render() {
 		const { values, handleChange } = this.props;
+		console.log(values);
 		return (
 			<MuiThemeProvider>
 				<React.Fragment>

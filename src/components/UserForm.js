@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FormUserDetails from './FormUserDetails';
+import UserPersonalDetails from './UserPersonalDetails';
+
 export class UserForm extends Component {
 	state = {
 		step: 1,
@@ -36,22 +38,24 @@ export class UserForm extends Component {
 		const { firstName, lastName, occupation, city, bio } = this.state;
 		const values = { firstName, lastName, occupation, city, bio };
 
+		// eslint-disable-next-line default-case
 		switch (step) {
 			case 1:
+				return <FormUserDetails nextStep={this.nextStep} handleChange={this.handleChange} values={values} />;
+			case 2:
 				return (
-					<FormUserDetails
+					<UserPersonalDetails
 						nextStep={this.nextStep}
 						handleChange={this.handleChange}
 						values={values}
 						prevStep={this.prevStep}
 					/>
 				);
-			case 2:
-				return <h1>Helo from step 2</h1>;
 			case 3:
 				return <h1>Confirm step 3</h1>;
+			// eslint-disable-next-line no-duplicate-case
 			case 2:
-				return <h1>Sucess</h1>;
+				return <h1>Success</h1>;
 		}
 	}
 }
