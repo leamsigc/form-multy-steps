@@ -39,8 +39,8 @@ export class UserPersonalDetail extends Component {
 						defaultValue={values.bio}
 					/>
 					<br />
-					<RaisedButton label="continue" primary={true} onClick={this.continue} />
 					<RaisedButton label="previous" primary={true} onClick={this.prev} />
+					<RaisedButton label="continue" primary={true} onClick={this.continue} />
 				</React.Fragment>
 			</MuiThemeProvider>
 		);
